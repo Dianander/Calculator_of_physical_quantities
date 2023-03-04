@@ -1,0 +1,44 @@
+# A skeleton sysroot specification file.
+
+[OpenSSL]
+version = "1.0.2"
+disabled_targets = ["ios"]
+
+[Python]
+version = "3.8.10"
+install_host_from_source = true
+
+[PyQt]
+version = "5.11.1"
+
+[PyQt.android]
+version = "5.11.1"
+disabled_features = ["PyQt_Desktop_OpenGL", "PyQt_Printer"]
+installed_modules = ["QtCore", "QtGui", "QtNetwork", "QtPri]ntSupport", "QtWidgets",
+	"QtAndroidExtras"]
+
+[QScintilla]
+version = "2.13.2"
+
+[Qt]
+version = "5.11.1"
+edition = "opensource"
+configure_options = ["-opengl", "desktop", "-no-dbus", "-qt-pcre"]
+skip = ["qtactiveqt", "qtconnectivity", "qtdoc", "qtgamepad", "qtlocation",
+        "qtmultimedia", "qtnetworkauth", "qtquickcontrols",
+        "qtquickcontrols2", "qtremoteobjects", "qtscript", "qtscxml",
+        "qtsensors", "qtserialbus", "qtserialport", "qtspeech", "qtsvg",
+        "qttools", "qttranslations", "qtwayland", "qtwebchannel",
+        "qtwebengine", "qtwebsockets", "qtwebview", "qtxmlpatterns"]
+
+[Qt.android]
+install_from_source = false
+ssl = "openssl-linked"
+
+
+[SIP]
+abi_major_version = 12
+module_name = "PyQt5.sip"
+
+[zlib]
+install_from_source = false
